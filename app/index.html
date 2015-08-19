@@ -48,20 +48,22 @@
     </header>
 
     <nav class="navdrawer-container promote-layer" style="padding-top: 20px;">
-      <img class="thum" ng-src="{{ ::item.image }}" alt="{{ ::item.name }}" ng-repeat="item in ::mainCtrl.items">
+      <a href="" ng-click="mainCtrl.select(item)" ng-repeat="item in ::mainCtrl.items">
+        <img class="thum" ng-src="{{ ::item.image }}" alt="{{ ::item.name }}">
+      </a>
     </nav>
 
     <main>
       <div class="guides-list__item">
         <div class="primary-content g--centered">
-          <img src="http://tiqav.com/5KK.jpg" alt="">
+          <img ng-src="{{ mainCtrl.selectedItem.image }}" alt="{{ mainCtrl.selectedItem.name }}">
         </div>
         <div class="secondary-content">
           <!-- <span class="icon-circle themed--background"><i class="icon icon-star"></i></span> -->
           <ul class="list-links list-inputs">
-            <li><label for="image">Image URL</label><input type="text" id="image" value="http://tiqav.com/5KK.jpg" readonly></li>
-            <li><label for="link">Link</label><input type="text" id="link" value="<img src='http://tiqav.com/5KK.jpg' alt=''>" readonly></li>
-            <li><label for="markdown">Markdown</label><input type="text" id="markdown" value="![くうきよめ](http://tiqav.com/5KK.jpg)" readonly></li>
+            <li><label for="image">Image URL</label><input type="text" id="image" value="{{ mainCtrl.selectedItem.image }}" readonly></li>
+            <li><label for="link">Link</label><input type="text" id="link" value="<img src='{{ mainCtrl.selectedItem.image }}' alt='{{ mainCtrl.selectedItem.name }}'>" readonly></li>
+            <li><label for="markdown">Markdown</label><input type="text" id="markdown" value="![{{ mainCtrl.selectedItem.name }}]({{ mainCtrl.selectedItem.image }})" readonly></li>
           </ul>
         </div>
       </div>
