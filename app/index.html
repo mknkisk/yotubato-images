@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="">
+<html lang="en" ng-app="MyApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,7 +35,7 @@
     <!-- Page styles -->
     <link rel="stylesheet" href="styles/main.css">
   </head>
-  <body>
+  <body ng-controller="MainController as mainCtrl">
     <header class="app-bar promote-layer">
       <div class="app-bar-container">
         <button class="menu hamburger-button"><img src="images/hamburger.svg" alt="Menu"></button>
@@ -48,10 +48,7 @@
     </header>
 
     <nav class="navdrawer-container promote-layer" style="padding-top: 20px;">
-      <img class="thum" src="http://tiqav.com/5KK.jpg" alt="">
-      <img class="thum" src="http://tiqav.com/5KK.jpg" alt="">
-      <img class="thum" src="http://tiqav.com/5KK.jpg" alt="">
-      <img class="thum" src="http://tiqav.com/5KK.jpg" alt="">
+      <img class="thum" ng-src="{{ ::item.image }}" alt="{{ ::item.name }}" ng-repeat="item in ::mainCtrl.items">
     </nav>
 
     <main>
@@ -72,7 +69,9 @@
 
     <!-- build:js scripts/main.min.js -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="scripts/services.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
 
