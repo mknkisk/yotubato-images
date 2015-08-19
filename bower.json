@@ -1,0 +1,20 @@
+{
+  "name": "yotubato",
+  "version": "0.0.1",
+  "authors": [
+    "mknkisk"
+  ],
+  "description": "yotubato images",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.4.4"
+  }
+}

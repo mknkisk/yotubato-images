@@ -138,6 +138,17 @@ gulp.task('html', function () {
     .pipe($.size({title: 'html'}));
 });
 
+// Bower - Scripts
+gulp.task('bower-scripts', function() {
+  var directory = { bower : './bower_components/' };
+
+  return gulp.src([
+    directory.bower + '**/*.min.js'
+  ])
+  // Output Files
+  .pipe(gulp.dest('app/scripts/vendor'));
+});
+
 // Clean output directory
 gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
@@ -175,7 +186,7 @@ gulp.task('serve:dist', ['default'], function () {
 
 // Build production files, the default task
 gulp.task('default', ['clean'], function (cb) {
-  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
+  runSequence('styles', ['jshint', 'html', 'bower-scripts', 'images', 'fonts', 'copy'], cb);
 });
 
 // Run PageSpeed Insights
