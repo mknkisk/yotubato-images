@@ -229,6 +229,12 @@ img.thum {
   margin: 5px;
 }
 
+img.img--centered {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 main {
   margin: 0 auto;
   /* Height of the header */
