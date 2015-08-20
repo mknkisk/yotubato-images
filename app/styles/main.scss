@@ -158,6 +158,7 @@ ol {
   -webkit-transform: translate(-250px, 0);
           transform: translate(-250px, 0);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .navdrawer-container.open {
