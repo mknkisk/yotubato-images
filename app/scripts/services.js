@@ -3,34 +3,28 @@
 
   angular
     .module('MyApp.services', [])
-    .service('ItemLoader', ItemLoader);
+    .factory('ItemLoader', ItemLoader);
 
-  function ItemLoader() {
-    this.items = [
-      {
-        image: 'http://tiqav.com/5KK.jpg',
-        name: 'くうきよめ'
-      },
-      {
-        image: 'http://tiqav.com/oH.jpg',
-        name: 'よろしくお願いしまう'
-      },
-      {
-        image: 'http://tiqav.com/5KR.jpg',
-        name: '私はお金で動く'
-      },
-      {
-        image: 'http://tiqav.com/5Jg.jpg',
-        name: 'あー!あー!あー!あー!'
-      },
-      {
-        image: 'http://tiqav.com/5KX.jpg',
-        name: 'だめです'
-      }
-    ];
+  ItemLoader.$inject = ['$http', '$q'];
 
-    this.random = function() {
-      return this.items[Math.floor(Math.random() * this.items.length)];
+  function ItemLoader($http, $q) {
+
+    return {
+      load: load
     };
+
+    function load() {
+      var delay = $q.defer();
+      var uri = 'http://api.tiqav.com/search.json?q=' +
+        encodeURIComponent('よつばと') + '&callback=JSON_CALLBACK';
+
+      $http.jsonp(uri).then(function(res){
+        delay.resolve(res.data);
+      }, function(res){
+        delay.reject(res);
+      });
+
+      return delay.promise;
+    }
   }
 })();

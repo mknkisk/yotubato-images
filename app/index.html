@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="MyApp">
+<html lang="" ng-app="MyApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,21 +49,21 @@
 
     <nav class="navdrawer-container promote-layer" style="padding-top: 20px;">
       <a href="" ng-click="mainCtrl.select(item)" ng-repeat="item in ::mainCtrl.items">
-        <img class="thum" ng-src="{{ ::item.image }}" alt="{{ ::item.name }}">
+        <img class="thum" ng-src="{{ ::item.thumnail }}" alt="">
       </a>
     </nav>
 
     <main>
       <div class="guides-list__item">
         <div class="primary-content g--centered">
-          <img class="img--centered" ng-src="{{ mainCtrl.selectedItem.image }}" alt="{{ mainCtrl.selectedItem.name }}">
+          <img class="img--centered" ng-src="{{ mainCtrl.selectedItem.original }}" alt="">
         </div>
         <div class="secondary-content">
           <!-- <span class="icon-circle themed--background"><i class="icon icon-star"></i></span> -->
           <ul class="list-links list-inputs">
-            <li><label for="image">Image URL</label><input type="text" id="image" value="{{ mainCtrl.selectedItem.image }}" readonly></li>
-            <li><label for="link">Link</label><input type="text" id="link" value="<img src='{{ mainCtrl.selectedItem.image }}' alt='{{ mainCtrl.selectedItem.name }}'>" readonly></li>
-            <li><label for="markdown">Markdown</label><input type="text" id="markdown" value="![{{ mainCtrl.selectedItem.name }}]({{ mainCtrl.selectedItem.image }})" readonly></li>
+            <li><label for="image">Image URL</label><input type="text" id="image" value="{{ mainCtrl.selectedItem.original }}" readonly></li>
+            <li><label for="link">Link</label><input type="text" id="link" value="<img src='{{ mainCtrl.selectedItem.original }}' alt=''>" readonly></li>
+            <li><label for="markdown">Markdown</label><input type="text" id="markdown" value="![]({{ mainCtrl.selectedItem.original }})" readonly></li>
           </ul>
         </div>
       </div>
