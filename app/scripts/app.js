@@ -3,6 +3,7 @@
 
   angular
     .module('MyApp', [
-      'MyApp.services'
+      'MyApp.services',
+      'ngTouch'
     ]);
 })();
