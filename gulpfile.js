@@ -65,7 +65,8 @@ gulp.task('copy', function () {
   return gulp.src([
     'app/*',
     '!app/*.html',
-    'node_modules/apache-server-configs/dist/.htaccess'
+    'node_modules/apache-server-configs/dist/.htaccess',
+    'config/CNAME'
   ], {
     dot: true
   }).pipe(gulp.dest('dist'))
