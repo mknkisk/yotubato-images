@@ -46,14 +46,14 @@
 
     <nav class="navdrawer-container promote-layer" style="padding-top: 20px;">
       <a href="" ng-click="mainCtrl.select(item)" ng-repeat="item in ::mainCtrl.items">
-        <img class="thum" ng-src="{{ ::item.thumnail }}" alt="">
+        <img class="img-thum" ng-src="{{ ::item.thumnail }}" alt="">
       </a>
     </nav>
 
     <main>
       <div class="guides-list__item">
         <div class="primary-content g--centered">
-          <img class="img--centered" ng-src="{{ mainCtrl.selectedItem.original }}" alt="">
+          <img class="img-main img--centered" ng-src="{{ mainCtrl.selectedItem.original }}" alt="">
         </div>
         <div class="secondary-content">
           <!-- <span class="icon-circle themed--background"><i class="icon icon-star"></i></span> -->

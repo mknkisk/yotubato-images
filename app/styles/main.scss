@@ -177,7 +177,7 @@ main {
   color: rgba(255, 255, 255, 0);
 }
 
-img.thum {
+img.img-thum {
   height: 150px;
   min-width: 45%;
   max-width: 45%;
@@ -257,6 +257,10 @@ input[type="text"]:focus {
 
   button.menu {
     float: left;
+  }
+
+  img.img-main {
+    max-width: 700px;
   }
 
   // .navdrawer-container {
