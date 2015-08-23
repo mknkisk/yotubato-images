@@ -15,7 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "angularjs": "~1.4.4",
     "angular-touch": "~1.4.4"
   }
 }
