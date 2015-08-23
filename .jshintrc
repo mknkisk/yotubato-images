@@ -15,6 +15,12 @@
   "unused": "vars",
   "strict": true,
   "globals": {
-    "angular": false
+    "angular": false,
+    "jasmine": false,
+    "describe": false,
+    "beforeEach": false,
+    "inject": false,
+    "it": false,
+    "expect": false
   }
 }

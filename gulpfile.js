@@ -27,6 +27,7 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var pagespeed = require('psi');
 var reload = browserSync.reload;
+var Server = require('karma').Server;
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -150,6 +151,16 @@ gulp.task('bower-scripts', function() {
   .pipe(gulp.dest('app/scripts/vendor'));
 });
 
+/**
+ * Run test once and exit
+ */
+gulp.task('karma', function (done) {
+  new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
+});
+
 // Clean output directory
 gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
@@ -187,7 +198,7 @@ gulp.task('serve:dist', ['default'], function () {
 
 // Build production files, the default task
 gulp.task('default', ['clean'], function (cb) {
-  runSequence('styles', ['jshint', 'html', 'bower-scripts', 'images', 'fonts', 'copy'], cb);
+  runSequence('styles', ['jshint', 'html', 'bower-scripts', 'images', 'fonts', 'copy', 'karma'], cb);
 });
 
 // Run PageSpeed Insights
