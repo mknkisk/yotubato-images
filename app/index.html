@@ -58,9 +58,9 @@
         <div class="secondary-content">
           <!-- <span class="icon-circle themed--background"><i class="icon icon-star"></i></span> -->
           <ul class="list-links list-inputs">
-            <li><label for="image">Image URL</label><input type="text" id="image" value="{{ mainCtrl.selectedItem.original }}" readonly></li>
-            <li><label for="link">Link</label><input type="text" id="link" value="<img src='{{ mainCtrl.selectedItem.original }}' alt=''>" readonly></li>
-            <li><label for="markdown">Markdown</label><input type="text" id="markdown" value="![]({{ mainCtrl.selectedItem.original }})" readonly></li>
+            <li><label for="image">Image URL</label><input type="text" id="image" value="{{ mainCtrl.selectedItem.original }}" select-on-click></li>
+            <li><label for="link">Link</label><input type="text" id="link" value="<img src='{{ mainCtrl.selectedItem.original }}' alt='よつばと'>" select-on-click></li>
+            <li><label for="markdown">Markdown</label><input type="text" id="markdown" value="![よつばと]({{ mainCtrl.selectedItem.original }})" select-on-click></li>
           </ul>
         </div>
       </div>
@@ -70,6 +70,7 @@
     <script src="scripts/vendor/angular/angular.min.js"></script>
     <script src="scripts/vendor/angular-touch/angular-touch.min.js"></script>
     <script src="scripts/services.js"></script>
+    <script src="scripts/directives.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers.js"></script>
     <script src="scripts/main.js"></script>

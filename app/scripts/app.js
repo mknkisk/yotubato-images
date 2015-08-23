@@ -3,7 +3,8 @@
 
   angular
     .module('MyApp', [
+      'ngTouch',
       'MyApp.services',
-      'ngTouch'
+      'MyApp.directives'
     ]);
 })();
