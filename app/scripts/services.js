@@ -18,7 +18,7 @@
       var uri = 'http://api.tiqav.com/search.json?q=' +
         encodeURIComponent('よつばと') + '&callback=JSON_CALLBACK';
 
-      $http.jsonp(uri).then(function(res){
+      $http.jsonp(uri, { cache: true }).then(function(res){
         delay.resolve(res.data);
       }, function(res){
         delay.reject(res);
